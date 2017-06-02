@@ -93,7 +93,7 @@ class QuestionairController extends Controller
 
 	public function add($id)
 	{
-		return view('questionairs.addmode', ['questionair_id' => $id]);
+		return view('questionairs.addmore', ['questionair_id' => $id]);
 
 	}
 
@@ -128,7 +128,8 @@ class QuestionairController extends Controller
 
 		$questions->save();
 
-		return ['status' => "string"];
+		return redirect('questionairs');
+
 
 	}
 

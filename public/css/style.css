@@ -5187,9 +5187,9 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 
 
 .chat-room .user-head i {
- float: left;
- font-size: 40px;
- margin-right: 10px;
+   float: left;
+   font-size: 40px;
+   margin-right: 10px;
 }
 
 .chat-room .user-head h3 {
@@ -5605,11 +5605,11 @@ a.guest-on i {
 
 
 .p-task .external a {
-   color:#40cabe;
+ color:#40cabe;
 }
 
 .p-task .external a:hover {
-   color:#FF6C60;
+ color:#FF6C60;
 }
 
 
@@ -5777,7 +5777,7 @@ html, body {
 
 .act_btn a
 {
- color: #fff;
+   color: #fff;
 }
 
 .deact_btn
@@ -5788,7 +5788,7 @@ html, body {
 
 .deact_btn a
 {
- color: #fff;
+   color: #fff;
 }
 .delete_box
 {
@@ -5820,7 +5820,7 @@ html, body {
 
 .show_text
 {
-    display: none;
+    display: block;
 }
 
 .show_single
@@ -5836,6 +5836,7 @@ html, body {
 .que_check
 {
     margin-top: 18px !important;
+    cursor: pointer;
 }
 
 .add_more
@@ -5844,6 +5845,11 @@ html, body {
 }
 
 .que_check a
+{
+    cursor: pointer;
+}
+
+#add_choice
 {
     cursor: pointer;
 }
