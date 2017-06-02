@@ -196,14 +196,15 @@
   </form>
 </div>
 
+<div id="questionadd">
 
-{{-- <div class="questionadd"></div>
+</div>
 
 <div class="form-group">
   <div class="col-md-6">
     <a onclick="add_qst_row(this)" class="add_more">Add Questions</a>
   </div>
-</div> --}}
+</div>
 
 </div>
 </div>
@@ -244,10 +245,14 @@
     $('.show_multiple').show();
   });
 
-/*
+
   total_qst=0;
   function add_qst_row(obj){
     total_qst++;
+
+    parentLotNo = '<input id="name" type="text" class="form-control" name="Lotrows[#rows#][parentLotNO]" value="">';
+    parentLotNo = parentLotNo.replace(new RegExp('#rows#', 'g'), rows); 
+
     html = '<div class="form-horizontal">\
     <div class="form-group">\
       <label for="name" class="col-md-2 control-label">Question type</label>\
@@ -263,9 +268,9 @@
   ';
   if(total_qst!=1)
     html+= "";
-  $('.questionadd').append(html);
+  $('#questionadd').append(html);
 
-}*/
+}
 
 
 total_mcqs=0;

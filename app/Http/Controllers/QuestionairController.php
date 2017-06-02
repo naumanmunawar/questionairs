@@ -37,13 +37,11 @@ class QuestionairController extends Controller
 		$duration = ""; 
 		if(is_array($duration_value))
 			$duration = implode('-' , $duration_value);
-
 		$questionairs =  new Questionair([
 			'user_id' => Auth::user()->id,
 			'title' => $request->title,
 			'duration' => $duration,
 			'resumable' => $request->resumable,
-
 			]);	
 
 		$questionairs->save();
@@ -95,7 +93,7 @@ class QuestionairController extends Controller
 
 	public function add($id)
 	{
-		return view('questionairs.add', ['questionair_id' => $id]);
+		return view('questionairs.addmode', ['questionair_id' => $id]);
 
 	}
 
@@ -132,6 +130,51 @@ class QuestionairController extends Controller
 
 		return ['status' => "string"];
 
+	}
+
+	public function storeQuestion(Request $request)
+	{
+		//return view('questionairs.addmode', ['questionair_id' => $id]);
+		$rows=$request->row;
+		foreach ($rows as  $row) {
+			if(isset($row['question'])){
+				$question = $row['question'];
+			}
+			else{
+				$question = "";	
+			}
+			if(isset($row['answer'])){
+				$answers = $row['answer'];
+			}
+			else{
+				$answers = "";
+			}
+			if(isset($row['choices'])){
+				$choice = $row['choices'];
+				$choices = implode('-', $choice);
+			}
+			else{
+				$choices = "";	
+			}
+			if(isset($row['checked'])){
+				$check = $row['checked'];
+				$checked = implode('-', $check);
+
+			}
+			else{
+				$checked = "";
+			}
+			$questions =  new addQuestion([
+				'questionair_id' => $request->questionair_id,
+				'question' => $question,
+				'answer' => $answers,	
+				'choices' => $choices,	
+				'checked' => $checked,	
+				]);	
+			$questions->save();
+
+		}
+		return redirect('questionairs');
 	}
 
 }

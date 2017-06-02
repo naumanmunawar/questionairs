@@ -12,6 +12,7 @@ class addQuestion extends Model
 	'questionair_id',
 	'question',
 	'answer',
+	'checked',
 	'choices',
 	];
 

@@ -31,4 +31,4 @@ Route::get('/questionairs/delete/{id}', 'QuestionairController@delete');
 
 //add questionair
 Route::get('/questionairs/add/{id}', 'QuestionairController@add');
-Route::post('/questionairs/add', 'QuestionairController@add_post');
+Route::post('/question/store', 'QuestionairController@storeQuestion');
